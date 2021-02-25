@@ -8,12 +8,12 @@ const getInput = require("./get-input.js");
 
 const color1 = getInput(1);
 const color2 = getInput(2);
-const noColor = undefined;
+//const noColor = undefined;
 
-if (colorCombinator(noColor, noColor)) {
-    console.log('You must enter at least one color');
-} 
-
-if (colorCombinator(color1 === 'red', color2 === 'yellow')) {
-    console.log('Those two colors make orange');
+if (color1 === undefined && color2 === undefined) {
+    console.log('Must enter at least one color')
+} else if (color1 && color2 === undefined) {
+   console.log(colorDeconstructor(color1));
+} else if (color1, color2) {
+    console.log(colorCombinator(color1, color2));
 }
