@@ -10,10 +10,18 @@ const color1 = getInput(1);
 const color2 = getInput(2);
 //const noColor = undefined;
 
-if (color1 === undefined && color2 === undefined) {
-    console.log('Must enter at least one color')
-} else if (color1 && color2 === undefined) {
-   console.log(colorDeconstructor(color1));
-} else if (color1, color2) {
-    console.log(colorCombinator(color1, color2));
+if (isValidSecondary(color1) && color2 === undefined) {
+    console.log(`${colorDeconstructor(color1)} make ${color1}`);
+} 
+
+if (isValidSecondary(color1) && color2 === color1) {
+    console.log('Please only input one secondary color at a time');
+} 
+
+if (isValidPrimary(color1) && isValidPrimary(color2) && color1 !== color2) {
+    console.log(`Those colors make the color ${colorCombinator(color1, color2)}`);
+}
+
+if (color1 === color2) {
+    console.log('Those are both the same color. Please select two different primary colors.')
 }
