@@ -8,7 +8,6 @@ const getInput = require("./get-input.js");
 
 const color1 = getInput(1);
 const color2 = getInput(2);
-//const noColor = undefined;
 
 // Checks to see if a valid secondary color is inputted without a second input
 if (isValidSecondary(color1) && color2 === undefined) {
@@ -55,3 +54,34 @@ if (((color1 !== 'red' && color1 !== 'blue' && color1 !== 'yellow' && color1 !==
 if ((color2 !== 'red' && color2 !== 'blue' && color2 !== 'yellow' && color2 !== 'orange' && color2 !== 'purple' && color2 !== 'green') && color1 !== undefined && color2 !== undefined) {
     console.log('Your second input is not a valid color. Please select two different primary colors or one secondary color.')
 }
+
+/*
+// Class Review led by Alex
+
+if (color1 === undefined && color2 === undefined) {
+    // Case 1: error
+    console.log('No colors provided. Error.')
+}
+
+else if (color1 !== undefined && color2 === undefined) {
+    // Case 2: deconstruct color 1
+    const isColor1Valid = isValidSecondary(color1);
+    if (isColor1Valid) {
+        const deconstruction = colorDeconstructor(color1);
+        console.log('Deconstruction is' + deconstruction);
+    } else {
+        console.log('Color 1 is not a valid secondary color')}
+}
+
+else {
+        // Case 3: combine color1 and color2
+    const isColor1Valid = isValidPrimary(color1);
+    const isColor2Valid = isValidPrimary(color2);
+    if (isColor1Valid && isColor2Valid) {
+        const combination = colorCombinator(color1, color2);
+        console.log('Combination is' + combination);
+    } else {
+        console.log('At least one color is not valid.')
+    }
+}
+*/
